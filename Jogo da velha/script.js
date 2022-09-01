@@ -13,10 +13,10 @@ function quemJoga()
     }
     if (vez == P1){
         let jogador = document.querySelectorAll('div#vez img')[0]
-        jogador.setAttribute('src', 'x.png')
+        jogador.setAttribute('src', 'img/x.png')
     } else{
         let jogador = document.querySelectorAll('div#vez img')[0]
-        jogador.setAttribute('src', 'o.png')
+        jogador.setAttribute('src', 'img/o.png')
     }
 
 }
@@ -31,12 +31,12 @@ function jogada()
             }
             if(this.getElementsByTagName('img').length == 0){
                 if(vez == P1){
-                    this.innerHTML = '<img src="x.png" alt="" height="150" width="150">'
+                    this.innerHTML = '<img src="img/x.png" alt="" height="150" width="150">'
                     this.setAttribute('jogada', P1)
                     vez = P2
 
                 } else{
-                    this.innerHTML = '<img src="o.png" alt="" height="150" width="150">'
+                    this.innerHTML = '<img src="img/o.png" alt="" height="150" width="150">'
                     this.setAttribute('jogada', P2)
                     vez = P1
                 }
