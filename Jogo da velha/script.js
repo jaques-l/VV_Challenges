@@ -2,6 +2,7 @@ const P1 = "X"
 const P2 = "O"
 let vez = P1
 let acabou = false
+let emapte = false
 
 quemJoga()
 jogada()
@@ -71,20 +72,37 @@ function verificador(){
         vencedor = b2
     } else if((c3 == c2 && c3 == c1 && c3 != '') || (c3 == a3 && c3 == b3 && c3 != '')){
         vencedor = c3
-    } 
+    } else if (a1 != '' &&
+        a2 != '' &&
+        a3 != '' &&
+        b1 != '' &&
+        b2 != '' &&
+        b3 != '' &&
+        c1 != '' &&
+        c2 != '' &&
+        c3 != '' ){            
+            empate = true          
+        }
 
-    if (vencedor != ''){
+    if (vencedor != '' ){
         acabou = true
         alert(`O vencedor é ${vencedor}`)
         if (acabou == true){
-            let btn = document.createElement("button", 'btn');
-            btn.innerHTML = "Resetar";
-            btn.classList.add('btn-reset')
-            document.body.appendChild(btn);
-            btn.addEventListener('click', function(){
-                document.location.reload(true)
-            })            
-        }
-    } 
+            resetar()
+        } 
+    } else if (empate == true){
+        alert('Empate!')
+        resetar()
+    }
                     
+}
+
+function resetar(){
+    let btn = document.createElement("button", 'btn');
+    btn.innerHTML = "Resetar";
+    btn.classList.add('btn-reset')
+    document.body.appendChild(btn);
+    btn.addEventListener('click', function(){
+        document.location.reload(true)
+    })
 }
