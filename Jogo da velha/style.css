@@ -1,0 +1,40 @@
+#grid {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 450px;
+    min-height: 450px;    
+    min-width: 450px;
+    height: 450px;
+    margin: auto;
+    padding-top: 60px;
+  }
+
+#vez {
+    text-align: center;
+    padding-top: 40px;
+}
+  
+p {
+    text-align: center;
+}
+
+span{
+    font-size: 90px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+  
+#grid > div {
+    padding: 10px;
+    background-color: #ccc;
+    width: 150px;
+    height: 150px;
+}
+
+.btn-reset{
+    margin-top: 80px;
+    padding: 10px 50px 10px 50px;
+    margin-left: 47.7%;
+}
