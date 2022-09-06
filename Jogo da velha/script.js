@@ -1,5 +1,5 @@
-const P1 = "X"
-const P2 = "O"
+const P1 = "Lusca"
+const P2 = "Jacolina"
 let vez = P1
 let acabou = false
 let emapte = false

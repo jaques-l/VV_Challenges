@@ -1,0 +1,40 @@
+body{
+    background-image: url(../img/horizonte.jpg);
+}
+
+.sol{
+    background-image: url(../img/sol.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 125px;
+    margin: 100px 100px 100px 1500px ;
+}
+
+
+.col{
+    width: 10px !important;
+    height: 10px !important;
+}
+
+.casa{
+    background-image: url(../img/casa.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 161px 219px 382px 594px;
+}
+
+.gimli{
+    background-image: url(../img/gimli.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 200px; padding: 0 0 110px 65px;
+    position: absolute;
+}
+
+.arvore{
+    background-image: url(../img/arvore.png);
+    background-size: contain;
+    padding: 100px;
+    width: 790px;
+    position: absolute;
+}
