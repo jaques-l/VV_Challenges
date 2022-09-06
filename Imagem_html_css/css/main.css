@@ -1,40 +1,173 @@
-body{
-    background-image: url(../img/horizonte.jpg);
+body {
+    background:#87ceeb; 
+
 }
 
-.sol{
-    background-image: url(../img/sol.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 125px;
-    margin: 100px 100px 100px 1500px ;
+.horizonte {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:300px;
+}
+.sol {
+    display:inline-block;
+    border-radius:50%;
+    height:200px;
+    width:200px;
+    background:orange;
+    box-shadow: 0 0 10px orange,
+                0 0 60px orange,
+                0 0 200px yellow,
+                inset 0 0 80px yellow;
+}
+
+.chao {
+    display:block;
+    height:52px;
+    width:100%;
+    background:#222;
+    position:absolute;
+    bottom:0;
 }
 
 
-.col{
-    width: 10px !important;
-    height: 10px !important;
-}
-
-.casa{
-    background-image: url(../img/casa.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 161px 219px 382px 594px;
-}
-
-.gimli{
-    background-image: url(../img/gimli.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: 200px; padding: 0 0 110px 65px;
+  
+.area {
+    height: 450px;
+    width: 400px;
+    top: 711px;
     position: absolute;
 }
-
-.arvore{
-    background-image: url(../img/arvore.png);
-    background-size: contain;
-    padding: 100px;
-    width: 790px;
+  
+.area * {
     position: absolute;
 }
+  
+.casa {
+    top: 3%;
+    left: 75px;
+    height: 200px;
+    width: 260px;
+    background: #FFF;
+    position: absolute;
+}
+.casa::before {
+    content: '';
+    position: absolute;
+    top: -95px;
+    left: 33px;
+    height: 183px;
+    width: 183.5px;
+    background: white;
+    transform: rotate(45deg);
+    border-top: 10px solid blue;
+    border-left: 10px solid blue;
+}
+
+.janela {
+    top: 35px;
+    left: 25px;
+    height: 80px;
+    width: 70px;
+    background: #96ebff;
+    z-index: 3;
+    border-top: 7px solid blue;
+}
+  
+.porta {
+    top: 70px;
+    left: 150px;
+    height: 130px;
+    width: 70px;
+    background: blue;
+    z-index: 3;
+} 
+  
+*{
+    box-sizing: border-box;
+}
+  
+.vini{
+    width: 15px;
+    height: 15px;
+    position: relative;
+}
+  
+.cabeca{
+    width: 25px;
+    height: 25px;
+    background-image: linear-gradient(to top, #000000, #402827, #79503c, #a7844c, #c1c165);
+    border-radius: 99px;
+    display: block;
+    position: absolute;
+    top: 414px;
+    left: 147px;
+}
+
+.cabeca p{
+    font-size: 25px;
+    font-weight: 900;
+    left: 45px;
+    position: absolute;
+    top: -53px;
+}
+
+.tronco{
+    width: 3px;
+    height: 50px;
+    border: 3px solid black;
+    display: block;
+    position: absolute;
+    top: 437px;
+    left: 156px;
+}
+  
+.braco-esquerdo{
+    width: 50px;
+    height: 3px;
+    border: 3px solid black;
+    display: block;
+    position: absolute;
+    top: 456px;
+    left: 118px;
+    transform: rotate(130deg);
+}
+  
+  
+.braco-direito {
+    width: 50px;
+    height: 3px;
+    border: 3px solid black;
+    display: block;
+    position: absolute;
+    top: 449px;
+    left: 155px;
+    transform: rotate(30deg);
+}
+  
+  
+.perna-esquerda {
+    width: 3px;
+    height: 50px;
+    border: 3px solid black;
+    display: block;
+    position: absolute;
+    top: 485px;
+    left: 155px;
+    transform: rotate(30deg);
+    transform-origin: top;
+}
+  
+.perna-direita {
+    width: 3px;
+    height: 50px;
+    border: 3px solid black;
+    display: block;
+    position: absolute;
+    top: 485px;
+    left: 157px;
+    transform: rotate(-30deg);
+    transform-origin: top;
+}
+  
+  
