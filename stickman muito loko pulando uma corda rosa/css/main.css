@@ -94,7 +94,6 @@ body {
     display: block;
     position: absolute;
     top: 211px;
-    left: 824px;
     animation: corda 2s infinite linear;
     transform-origin: bottom;
     box-sizing: border-box;
