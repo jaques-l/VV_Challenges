@@ -7,8 +7,10 @@ init.addEventListener('click', function(){
 	let quantidadeJogadores = document.getElementById('jogadores')
 	let jogador = Number(quantidadeJogadores.value)	
 	if ( jogador === 1){	
+		let p1 = 1
 		inicio()
 		escondeBotao()
+		quemJoga()
 	}else if (jogador === 2){
 		inicio()
 		escondeBotao()
@@ -27,12 +29,12 @@ init.addEventListener('click', function(){
 })
 
 let quemJoga = () => {
-    if (vez == P1){
-        let jogador = document.querySelectorAll('h2 .vez')[0]
-        jogador.setAttribute('src', 'img/x.png')
-    } else{
-        let jogador = document.querySelectorAll('h2 .vez')[0]
-        jogador.setAttribute('src', 'img/o.png')
+    if (vez == p1){
+        let jogador = document.querySelectorAll('h2 .vez')
+        jogador.innerText = p1
+    } else if (vez == p2){
+        let jogador = document.querySelectorAll('h2 .vez')
+        jogador.innerText = p1
     }
 }
 
