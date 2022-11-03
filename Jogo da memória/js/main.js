@@ -134,7 +134,12 @@ let fim = () => {
 	if (pairedcartas.length === 10) {
 		setTimeout(() => {
 			alert('Jogo encerrado!')
+            alert(placar())
 			document.location.reload(true)
 		}, 500)
 	}
+}
+
+let placar = () => {
+    
 }
