@@ -1,19 +1,15 @@
-const vogal_a = "a"
-const vogal_e = "e"
-const vogal_i = "i"
-const vogal_o = "o"
-const vogal_u = "u"
+const vogal_a = ['a', 'ã', 'â', 'á', 'à']
+const vogal_e = ["e", "ê", "é", "è"]
+const vogal_i = ['i', 'î', 'í', 'ì']
+const vogal_o = ['o', 'ô', 'õ', 'ó', 'ò']
+const vogal_u = ['u','û', 'ú', 'ù']
 const tot_vogal = document.getElementById('tot-vogal')
 const vogal_mais_repetida = document.getElementById('most-repeated')
 
 ready.addEventListener('click', function(){
 
-
 const string = document.getElementById('input'); 
 const result = countVowel(string.value); 
-
-
-
 
 })
 
@@ -60,4 +56,4 @@ function countVowel(str) {
     ${most_repeated}`
 
     return tot
-    }  
+    } 
