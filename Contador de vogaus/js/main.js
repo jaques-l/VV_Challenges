@@ -163,5 +163,3 @@ function countVowel(str) {
     
     return tot
 } 
-
-    
