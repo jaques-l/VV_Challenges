@@ -32,8 +32,8 @@ jQuery(function($){
             let firstMeaning = localStorage.getItem($input + '-01')
             let secondMeaning = localStorage.getItem($input + '-02')
 
-            $('#one').append(firstMeaning)
-            $('#two').append(secondMeaning)
+            $('#one').append(`<p style="padding-bottom:30px">${firstMeaning}</p>`)
+            $('#two').append(`<p>${secondMeaning}</p>`)
         }
     })
 
