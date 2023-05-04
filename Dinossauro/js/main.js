@@ -6,7 +6,7 @@ jQuery(function($){
 
     $btn.on('click', function(e){
         e.preventDefault()
-        const $input = $('#word').val()
+        const $input = $('#word').val().toLowerCase()
 
         if(/^[a-zA-Z-]*$/.test($input) == false) {
             removeHtml()
