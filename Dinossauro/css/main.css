@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+p,
+span{
+    color: #e6adad;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #e6adad;
+}
+
+#container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#bg-container{
+    padding: 50px;
+    background-color: #ee8282;
+    border-radius: 45px;
+}
+
+#main-title{
+    padding-bottom: 30px;
+}
+
+#word,
+#btn,
+#first-value,
+#second-value,
+#insert-btn{
+    padding: 5px;
+    background-color: #e6adad;
+}
+
+#first-value,
+#second-value{
+    margin-bottom: 30px;
+}
+
+#word::placeholder{
+    color: black;
+}
+
+#result{
+    padding-top: 30px;
+}
+
+#result-title,
+#one,
+#two{
+    font-weight: 900;
+    font-size: 25px;
+}
