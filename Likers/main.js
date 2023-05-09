@@ -4,10 +4,12 @@ jQuery(function($){
 
     $('#form').on('submit', function(e){
         e.preventDefault();
-        const names = $('#names-input').val();
+        const names = $('#names-input').val();  
         
-        
-        if(/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇ, ]*$/.test(names) === false || names === ',' || names === ' '){
+        const patt = /^([, ])\1+$/;
+        const result = patt.test(names);
+
+        if(/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇ, ]*$/.test(names) === false || result === true || names === ' ' || names === ','){
             alert('porra vini, nome próprio não tem número nem caractere especial')
             return false
         }
