@@ -4,16 +4,12 @@ jQuery(function($){
     const result = $('#result')
     const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','á','à','ã','â','é','ê','í','ó','ô','õ','ú','ç']
 
-    $(document).ready(function(){
-        let $c = 0
-        alphabet.forEach(function(){
-            localStorage.setItem(alphabet[$c], alphabet[$c])
-            $c++
-        })
-    })
+    $(document).ready(addAlphabet())
 
     $('#insert-form').on('submit', function(e){
         e.preventDefault()
+        addAlphabet()
+
         const $insertiWord = $('#word').val().toLowerCase()
 
         if(/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇ-]*$/.test($insertiWord) === false || $insertiWord === '-' || $insertiWord === 'ç') {
@@ -30,6 +26,7 @@ jQuery(function($){
         }
 
         localStorage.setItem($insertiWord, $insertiWord)
+        allStorage()
         alert('Palavra inserida com sucesso')
     })
 
@@ -47,11 +44,41 @@ jQuery(function($){
             return
         }
 
+
         $('#to-remove').remove()
 
         result.append(`<h1 id="to-remove" style="text-transform: capitalize;">${$searchWord}</h1>`)
 
     })
+
+    function addAlphabet(){
+        let $c = 0
+        alphabet.forEach(function(){
+            localStorage.setItem(alphabet[$c], alphabet[$c])
+            $c++
+        })
+    }
+
+      var availableTags = allStorage();
+      $( "#search-word").autocomplete({
+        source: availableTags
+      });
+    
+      function allStorage() {
+
+        var values = [],
+            keys = Object.keys(localStorage),
+            i = keys.length;
+
+            
+            while ( i-- ) {
+              values.push( localStorage.getItem(keys[i]) );
+            }
+            console.log(values)
+    
+        return values;
+    }
+
     
 })
 
