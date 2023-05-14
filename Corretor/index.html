@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oto Dicionário</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="container">
+        <div id="bg-container">
+            <h1 id="main-title">Oto Dicionário VVerner</h1>
+            <div id="insert">
+                <form id="insert-form">
+                    <label for="insert-word">Adicione uma palavra</label>
+                    <input type="text" name="insert-word" id="word" spellcheck="true" required>
+                <button id="insertBtn">Adicionar</button>
+                </form>
+                <form id="search-form">
+                    <label for="search-word">Pesquise uma palavra</label>
+                    <input type="text" name="search-word" id="search-word" spellcheck="true" required>
+                <button id="searchBtn">Pesquisar</button>
+                </form>
+            </div>
+            <div id="result">
+                <h1 id="to-remove" hidden></h1>
+            </div>
+        </div>
+    </div>
+    <script src="../jquery.js" defer></script> 
+    <script src="js/main.js" defer></script>
+</body>
+</html>
