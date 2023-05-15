@@ -26,8 +26,11 @@ jQuery(function($){
         }
 
         localStorage.setItem($insertiWord, $insertiWord)
-        allStorage()
         alert('Palavra inserida com sucesso')
+    })
+
+    $('#search-word').on('click', function(){
+      getSotaredItems()
     })
 
     $('#search-form').on('submit', function(e){
@@ -57,16 +60,26 @@ jQuery(function($){
             localStorage.setItem(alphabet[$c], alphabet[$c])
             $c++
         })
+
     }
 
-      var availableTags = allStorage();
+    getSotaredItems()
+      let allStored = getSotaredItems();
       $( "#search-word").autocomplete({
-        source: availableTags
-      });
+        minLength: 1,
+        source: function(request, response) {
+          let matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term) );
+          console.log(matcher)
+          response($.grep(allStored, function(item) {
+            return matcher.test(item);
+          }));
+        }
+        
+        });
     
-      function allStorage() {
+      function getSotaredItems() {
 
-        var values = [],
+        let values = [],
             keys = Object.keys(localStorage),
             i = keys.length;
 
@@ -74,7 +87,7 @@ jQuery(function($){
             while ( i-- ) {
               values.push( localStorage.getItem(keys[i]) );
             }
-            console.log(values)
+
     
         return values;
     }
