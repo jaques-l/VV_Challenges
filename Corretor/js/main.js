@@ -28,6 +28,7 @@ jQuery(function($){
 
         localStorage.setItem($insertiWord, $insertiWord)
         alert('Palavra inserida com sucesso')
+        location.reload()
     })
 
     $('#search-word').on('click', function(){
