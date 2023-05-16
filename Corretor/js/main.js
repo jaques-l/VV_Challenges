@@ -3,6 +3,7 @@ jQuery(function($){
     const $searchBtn = $('#searchBtn')
     const result = $('#result')
     const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','á','à','ã','â','é','ê','í','ó','ô','õ','ú','ç']
+    const alphabetStr = 'abcdefghijklmnopqrstuvwxyz'
 
     $(document).ready(addAlphabet())
 
@@ -61,6 +62,8 @@ jQuery(function($){
             $c++
         })
 
+        localStorage.setItem(alphabetStr, alphabetStr)
+
     }
 
     getSotaredItems()
@@ -68,14 +71,30 @@ jQuery(function($){
       $( "#search-word").autocomplete({
         minLength: 1,
         source: function(request, response) {
-          let matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term) );
-          console.log(matcher)
+          let matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term.charAt(0)) );
           response($.grep(allStored, function(item) {
+            console.log(item)
+
             return matcher.test(item);
-          }));
+          }))
         }
         
         });
+
+        $( "#search-word").autocomplete({
+          minLength: 1,
+          source: function(request, response) {
+              let matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term.slice(-1)) );
+              response($.grep(allStored, function(item) {
+                console.log(item)
+                if(item.length > 1){
+                  return matcher.test(item);
+
+                }
+              }))
+          }
+          
+          });
     
       function getSotaredItems() {
 
@@ -94,6 +113,3 @@ jQuery(function($){
 
     
 })
-
-
-
