@@ -47,23 +47,26 @@ jQuery(function($){
             let guess = $("#guess").val()
             if(guess <= 0 || guess > max){
                 alert("Número invalidom, por favor, tente outro")
-            }else if(maxAttempts > 0){
-                if(guess < secretNumber){
-                    $("#history").append(`<h1>Tentativa #${attemptNumber}, o número ${guess} foi muito baixo, tente um número maior`)
-                    attemptNumber++
-                }else if(guess > secretNumber){
-                    $("#history").append(`<h1>Tentativa #${attemptNumber}, o número ${guess} foi muito baixo, tente um número maior`)
-                    attemptNumber++
-                }else{                    
-                    newTry()
-                }
-                maxAttempts--
-                $("#chances").text(`${maxAttempts}`)
             }else{
-                alert("Acabaram suas tentativas.")
-                newTry()
-                $("#result").text(`O número secreto era ${secretNumber}`)
+                if(maxAttempts > 0){
+                    if(guess < secretNumber){
+                        $("#history").append(`<h1>Tentativa #${attemptNumber}, o número ${guess} foi muito baixo, tente um número maior`)
+                        attemptNumber++
+                    }else if(guess > secretNumber){
+                        $("#history").append(`<h1>Tentativa #${attemptNumber}, o número ${guess} foi muito alto, tente um número menor`)
+                        attemptNumber++
+                    }else{                    
+                        newTry()
+                    }
+                    maxAttempts--
+                    $("#chances").text(`${maxAttempts}`)
+                }else{
+                    alert("Acabaram suas tentativas.")
+                    newTry()
+                    $("#result").text(`O número secreto era ${secretNumber}`)
+                }
             }
+             
         })
     }
 
