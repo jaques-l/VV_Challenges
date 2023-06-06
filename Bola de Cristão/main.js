@@ -13,8 +13,6 @@ jQuery(function($){
         const secretNumber = Math.floor(Math.random() * max) + 1
         let maxAttempts = 10
         $("#dificulty").remove()
-        alert(secretNumber)
-        // alert(msg)
         $("section").append(attemptsTemplate.html())
         $("#chances").text(`${maxAttempts}`)
         $("#max").text(`${max}`)
@@ -26,8 +24,6 @@ jQuery(function($){
         const secretNumber = Math.floor(Math.random() * max) + 1
         let maxAttempts = 5
         $("#dificulty").remove()
-        alert(secretNumber)
-        // alert(msg)
         $("section").append(attemptsTemplate.html())
         $("#chances").text(`${maxAttempts}`)
         $("#max").text(`${max}`)
@@ -39,8 +35,6 @@ jQuery(function($){
         const secretNumber = Math.floor(Math.random() * max) + 1
         let maxAttempts = 1
         $("#dificulty").remove()
-        alert(secretNumber)
-        // alert(msg)
         $("section").append(attemptsTemplate.html())
         $("#chances").text(`${maxAttempts}`)
         $("#max").text(`${max}`)
