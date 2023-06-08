@@ -25,11 +25,11 @@ jQuery(function($){
     
             $inputs.each(function() {
                 if($(this).val() > 100 || $(this).val() < 0){
-                    // alert(`${$(this).val()} é uma nota invalida, e será considerada como 0 para ${userName}.`)
+                    alert(`${$(this).val()} é uma nota invalida, e será considerada como 0 para ${userName}.`)
                     values.push(0)
                     invalidGrade++
                 }else if($(this).val() === ""){
-                    // alert(`Uma nota não inseria pra ${userName}, será considerada 0.`)
+                    alert(`Uma nota não inseria pra ${userName}, será considerada 0.`)
                     values.push(0)
                     invalidGrade++
                 }else{
